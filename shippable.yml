@@ -10,18 +10,10 @@ runtime:
 build:
   pre_ci_boot:
     image_name: drydock/c7pytall
-    image_tag: master
+    image_tag: v6.8.4
     pull: true
     
   ci:
     - python --version 
     - pip --version #8.1.2
     - virtualenv --version #15.1.0
-    - docker pull shippabledocker/sample_node_pvt:ecr
-    
-integrations:
-    
-  hub:
- #Docker integration
-    - integrationName: ship-docker
-      type: dockerRegistryLogin
